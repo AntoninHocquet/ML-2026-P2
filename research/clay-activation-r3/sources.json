@@ -170,5 +170,167 @@
     "url": "https://doi.org/10.1007/s42860-023-00224-w",
     "supplementary_urls": [],
     "report_notes": "Additional related palygorskite paper; R3 count not verified; check overlap with S08"
+  },
+  {
+    "source_id": "S19",
+    "title": "Properties and pozzolanic reactivity of calcined clays for low-carbon cements",
+    "authors": "Tole, I. et al.",
+    "publication": "Cement and Concrete Research 199 (2026), 108211",
+    "url": "https://doi.org/10.1016/j.cemconres.2026.108211",
+    "supplementary_urls": [],
+    "report_notes": "21 Eureka clay calcination treatments (CC2-CC63); 800 °C, 60 min; full XRF and QXRD mineralogy"
+  },
+  {
+    "source_id": "S20",
+    "title": "Mechanochemical and thermal activation of kaolinitic clays: comparative reactivity and microstructure",
+    "authors": "Alvarez-Coscojuela, A. et al.",
+    "publication": "Construction and Building Materials 465 (2025), 142848",
+    "url": "https://doi.org/10.1016/j.conbuildmat.2025.142848",
+    "supplementary_urls": [],
+    "report_notes": "15 records across TA, MCA, and MTA (combined milling and heat); exact and derived 7-day R3 heat"
+  },
+  {
+    "source_id": "S21",
+    "title": "Pozzolanic reactivity of calcined Turkish clays in lime and cement systems",
+    "authors": "Avci et al.",
+    "publication": "Applied Clay Science 278 (2026), 108085",
+    "url": "https://doi.org/10.1016/j.clay.2025.108085",
+    "supplementary_urls": [],
+    "report_notes": "3 calcined clays (TA-C, YL-C, BL-C); 800 °C, 120 min; albite and vermiculite accessory phases"
+  },
+  {
+    "source_id": "S22",
+    "title": "Meta-analysis and secondary compilation of calcined clay pozzolanic reactivity",
+    "authors": "Bahhou et al.",
+    "publication": "Materials and Structures / MoESM (2026)",
+    "url": "https://doi.org/10.1007/s42247-026-01562-w",
+    "supplementary_urls": [],
+    "report_notes": "125 secondary compilation entries; 600-1000 °C; reported clay content and XRF oxide profiles"
+  },
+  {
+    "source_id": "S23",
+    "title": "Mechanochemical vs thermal activation of bauxitic and ferruginous clays for SCM applications",
+    "authors": "Muzenda et al.",
+    "publication": "Construction and Building Materials 461 (2025), 141703",
+    "url": "https://doi.org/10.1016/j.conbuildmat.2025.141703",
+    "supplementary_urls": [],
+    "report_notes": "6 records: B1 and B2 clays comparing calcination at 800 °C vs planetary milling for 8h and 12h"
+  },
+  {
+    "source_id": "S24",
+    "title": "Reactivity of mechanically and thermally activated Texas clays in alkali-activated and blended systems",
+    "authors": "Callender, C.",
+    "publication": "MSc Thesis, University of Texas at Austin (2026)",
+    "url": "",
+    "supplementary_urls": [],
+    "report_notes": "10 records: calcined clay (700 °C) and planetary milling (200-500 rpm) alone and co-milled with waste glass/silicate"
+  },
+  {
+    "source_id": "S25",
+    "title": "Reactivity of thermally and mechanically activated kaolinite and illite: Influence of grinding aids",
+    "authors": "Plusquellec, G. et al.",
+    "publication": "16th International Congress on the Chemistry of Cement (ICCC), Bangkok (2023), paper D0011",
+    "url": "https://www.researchgate.net/publication/374743537",
+    "supplementary_urls": [],
+    "report_notes": "32 records across pure and natural kaolinite/illite, milling speed/duration series, TEA additive dosage, and MTA"
+  },
+  {
+    "source_id": "S26",
+    "title": "Thermal and mechanochemical activation of low-grade multi-mineral clays",
+    "authors": "Ruckes et al.",
+    "publication": "Applied Clay Science 281 (2026), 108111",
+    "url": "https://doi.org/10.1016/j.clay.2025.108111",
+    "supplementary_urls": [],
+    "report_notes": "28 records: 7 raw clays (OC68, BZ55, CA70, CR80, MP42, SL60, BS54) under TA and MCA (30, 60, 120 min); QXRD Rietveld"
+  },
+  {
+    "source_id": "S27",
+    "title": "Activation of halloysite nanotubes for low-carbon cement binders: calcination vs milling",
+    "authors": "Marco-Gibert, A. et al.",
+    "publication": "Applied Clay Science 283 (2026), 108284",
+    "url": "https://doi.org/10.1016/j.clay.2026.108284",
+    "supplementary_urls": [],
+    "report_notes": "3 records: Imerys Matauri Bay tubular halloysite; calcined (800 °C) and milled (250/350 rpm); explicit 7d R3"
+  },
+  {
+    "source_id": "S28",
+    "title": "Synergistic mechanochemical and thermal activation of low-grade clay for LC3 cements",
+    "authors": "Xu, Z.; Marsh, A. T. M.; Dhar, M.; Scrivener, K. L.",
+    "publication": "Communications Materials / Nature (2026)",
+    "url": "https://doi.org/10.1038/s44172-026-00776-4",
+    "supplementary_urls": [],
+    "report_notes": "7 records: CG58 natural kaolinitic clay under TA, MCA (10, 30, 45 min), and sequential MTA (milled then 550 °C calcined)"
+  },
+  {
+    "source_id": "S29",
+    "title": "Pilot-scale and laboratory calcination of illite and smectite clays",
+    "authors": "Müller et al.",
+    "publication": "CE/papers 9 (2026), cepa.70839",
+    "url": "https://doi.org/10.1002/cepa.70839",
+    "supplementary_urls": [],
+    "report_notes": "8 records: illite and smectite clays calcined at 820 °C across laboratory chamber furnace (15, 60, 120 min) and rotary kiln pilot (15 min)"
+  },
+  {
+    "source_id": "S30",
+    "title": "Atmosphere-controlled cooling of calcined clays: color and pozzolanic reactivity",
+    "authors": "Martirena-Hernandez, J. F.; Duverger, Y.",
+    "publication": "CE/papers 9 (2026), cepa.70811",
+    "url": "https://doi.org/10.1002/cepa.70811",
+    "supplementary_urls": [],
+    "report_notes": "6 records: A1, C2, C3 clays under normal oxidizing cooling (NC) vs reducing cooling (CC)"
+  },
+  {
+    "source_id": "S31",
+    "title": "Overcalcination kinetics and temperature sensitivity of high-purity and iron-rich kaolinitic clays",
+    "authors": "Zunino, F.; Scrivener, K. L.",
+    "publication": "Cement and Concrete Composites 146 (2024), 105380",
+    "url": "https://doi.org/10.1016/j.cemconcomp.2023.105380",
+    "supplementary_urls": [],
+    "report_notes": "12 records: natural kaolinitic clay NC and pure kaolin Ka calcined from 650 °C to 1050 °C; converted R3 heat"
+  },
+  {
+    "source_id": "S32",
+    "title": "Mechanical activation of kaolin: impact on calcination kinetics and hydration",
+    "authors": "Mañosa, J. et al.",
+    "publication": "Journal of Building Engineering 98 (2024), 110748",
+    "url": "https://doi.org/10.1016/j.jobe.2024.110748",
+    "supplementary_urls": [],
+    "report_notes": "1 record: Kln82-MCA (350 rpm, 120 min) R3 629 J/g and compressive strength 43 MPa"
+  },
+  {
+    "source_id": "S33",
+    "title": "Mechanochemical activation of muscovite-rich clay: milling parameters and reactivity",
+    "authors": "Mañosa, J. et al.",
+    "publication": "Applied Clay Science 250 (2024), 107266",
+    "url": "https://doi.org/10.1016/j.clay.2024.107266",
+    "supplementary_urls": [],
+    "report_notes": "12 records: commercial RM muscovite clay milled at 250, 300, 350, 400 rpm for 30 to 120 min"
+  },
+  {
+    "source_id": "S34",
+    "title": "Design of experiments optimization of planetary ball milling for kaolin activation",
+    "authors": "Mañosa, J. et al.",
+    "publication": "Materials 17 (2024), 4651",
+    "url": "https://doi.org/10.3390/ma17184651",
+    "supplementary_urls": [],
+    "report_notes": "5 records: DoE series (250-350 rpm, 60-120 min) in RETSCH PM400; digitized 7-day R3 heat"
+  },
+  {
+    "source_id": "S35",
+    "title": "Mechanochemical activation of natural clays: energetic modeling and reactivity",
+    "authors": "Cipriano et al.",
+    "publication": "CE/papers 9 (2026), cepa.70847",
+    "url": "https://doi.org/10.1002/cepa.70847",
+    "supplementary_urls": [],
+    "report_notes": "5 records: M1 to M5 planetary milling series (500 rpm, BPR 10:1 and 20:1, 5-40 min)"
+  },
+  {
+    "source_id": "S36",
+    "title": "Planetary ball milling activation of illitic-sepiolitic clays: ball-to-powder ratio and time",
+    "authors": "Zeidler, S.; Schmidt-Döhl, F.",
+    "publication": "CE/papers 9 (2026), cepa.70974",
+    "url": "https://doi.org/10.1002/cepa.70974",
+    "supplementary_urls": [],
+    "report_notes": "4 records: Clay A milled at 400 rpm across BPR 3 to 20 (60-180 min); ICP-OES and QXRD"
   }
 ]
