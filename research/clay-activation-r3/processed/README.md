@@ -8,7 +8,7 @@ python3 scripts/consistency.py research/clay-activation-r3/processed/all_data_co
 ```
 
 ### Pourquoi ce fichier source
-`r3_unified_dataset.csv` contient tout ce qu'il y a dans l'Excel `TA_MCA_MTA_R3_XRF_QXRD_20261111.xlsx` (mêmes valeurs pour les identifiants communs) **plus** : Marsh et al. 2026 / S01 (48 lignes de broyage, dont 34 avec énergie mesurée), Zunino & Scrivener 2024 (12), Panzer 2024 / S03 et Koutsouradi 2024 / S02 avec température et minéralogie (absentes de `r3_measurements.csv`), et 10 lignes Mañosa de plus. Les lignes « chaleur » de `r3_measurements.csv` y sont toutes. `r3_measurements.csv` (26 lignes) ne contient plus que de la chaleur R3 à 7 j, déjà présente dans le fichier unifié.
+`r3_unified_dataset.csv` contient tout ce qu'il y a dans l'Excel `TA_MCA_MTA_R3_XRF_QXRD_20261111.xlsx` (mêmes valeurs pour les identifiants communs) **plus** : Marsh et al. 2026 / S01 (48 lignes de broyage, dont 34 avec énergie mesurée), Zunino & Scrivener 2024 (12), Panzer 2024 / S03 et Koutsouradi 2024 / S02 avec température et minéralogie, et 10 lignes Mañosa de plus. Les anciens fichiers `r3_measurements.csv` et `r3_auxiliary_measurements.csv` ont été supprimés : leur chaleur 7 j est entièrement dans ce fichier.
 
 ## Fichiers
 
