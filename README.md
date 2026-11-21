@@ -10,14 +10,14 @@ Le jeu de données unifié combine les données initiales du dépôt GitHub et l
 
 | Jeu de données | Fichier | Observations | Métrique principale | Activation couverte |
 | :--- | :--- | :---: | :--- | :--- |
-| **Jeu Unifié Principal (Machine Learning)** | [`research/clay-activation-r3/r3_unified_dataset.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_unified_dataset.csv) | **393** | **Chaleur R³ à 7 jours** ($J/g$ d'argile activée) | **TA** (245), **MCA** (148) |
+| **Jeu Unifié Principal (Machine Learning)** | [`research/clay-activation-r3/r3_unified_dataset.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_unified_dataset.csv) | **268** | **Chaleur R³ à 7 jours** ($J/g$ d'argile activée) | **TA** (120), **MCA** (148) |
 | **Registre des Sources Bibliographiques** | [`research/clay-activation-r3/sources.json`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/sources.json) | **36 études** | Métadonnées, DOI, conditions | S01 à S36 |
 
 ---
 
 ## 🔬 Modes d'Activation Couverts
 
-1. **Activation Thermique (TA - 245 échantillons)** :
+1. **Activation Thermique (TA - 120 échantillons)** :
    - Calcination statique (four à moufle), rotatif pilote, flash calciner industriel.
    - Températures de 400 °C à 1200 °C, temps de séjour de 15 min à 240 min.
 2. **Activation Mécanochimique (MCA - 148 échantillons)** :

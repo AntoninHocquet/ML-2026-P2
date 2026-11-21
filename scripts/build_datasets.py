@@ -66,7 +66,6 @@ def quality(q):
 d["r3_quality"] = d.r3_data_quality_raw.map(quality)
 d["r3_unit_converted"] = TXT.str.contains("j/g solids") | d.r3_data_quality_raw.astype(str).str.contains("converted")
 d["protocol_documented"] = d.r3_protocol.notna()
-d["is_secondary_compilation"] = d.reference.astype(str).str.contains("secondary compilation")
 d["process_family"] = d.activation_type.map({"TA": "thermal", "MCA": "mechanical"})
 
 # ------------------------------------------------------------------ 3. variables extraites des notes / IDs
@@ -140,7 +139,7 @@ def stem(sid):
 d["parent_clay_id"] = [f"{rk}-C{codes[(rk, ck)]:03d}" if ck else f"{rk}-{stem(s)}"
                        for rk, ck, s in zip(ref_key, ckey, SID)]
 
-# doublons exacts internes (même argile, mêmes conditions, même valeur) : surtout Bahhou
+# doublons exacts internes (même argile, mêmes conditions, même valeur)
 key = ["parent_clay_id", "process_family", "calcination_temp_c", "dwell_min", "milling_time_min",
        "mill_rpm", "ball_to_powder_ratio", "r3_heat_7d_j_per_g"]
 dup = d.duplicated(key, keep="first") & d[COMP].notna().any(axis=1)
@@ -148,8 +147,8 @@ drop(dup, "doublon exact interne (même argile, mêmes conditions, même valeur)
 
 # ------------------------------------------------------------------ 5. sortie
 # sample_id : clé (jointure avec r3_unified_dataset pour la traçabilité) ; parent_clay_id : groupes de CV ;
-# reference : filtre / CV par source ; is_secondary_compilation : avec / sans Bahhou
-ID = ["sample_id", "parent_clay_id", "reference", "is_secondary_compilation"]
+# reference : filtre / CV par source
+ID = ["sample_id", "parent_clay_id", "reference"]
 CLAY = ["kaolinite_pct", "smectite_pct", "illite_mica_pct", "mixed_is_pct", "chlorite_pct", "quartz_pct",
         "calcite_pct", "dolomite_pct", "feldspar_pct", "other_minerals_pct", "raw_amorphous_pct",
         "total_clay_pct", "sio2_pct", "al2o3_pct", "fe2o3_pct", "cao_pct", "mgo_pct", "k2o_pct",

@@ -21,5 +21,4 @@ key = ["parent_clay_id", "process_family", "calcination_temp_c", "dwell_min", "f
 d = a[a.duplicated(key, keep=False)]
 print(f"\n[5] same clay + same recorded conditions, several rows: {len(d)}")
 print(d.sort_values("parent_clay_id")[["parent_clay_id", "sample_id", y]].head(30).to_string())
-print("\n[6] by source type"); print(a.groupby(["process_family", "is_secondary_compilation"])[y].describe()[["count", "mean", "50%"]].round(0).to_string())
-print("\n[7] by quality"); print(a.groupby(["process_family", "r3_quality"])[y].describe()[["count", "mean", "50%"]].round(0).to_string())
+print("\n[6] by quality"); print(a.groupby(["process_family", "r3_quality"])[y].describe()[["count", "mean", "50%"]].round(0).to_string())

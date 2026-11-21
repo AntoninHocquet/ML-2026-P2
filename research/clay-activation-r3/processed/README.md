@@ -1,6 +1,6 @@
 # Datasets R3 : calcination vs broyage
 
-Générés par `scripts/build_datasets.py` à partir de **`r3_unified_dataset.csv`** (393 lignes TA + MCA, toutes avec chaleur R3 à 7 j ; les 17 lignes MTA ont été supprimées du dépôt).
+Générés par `scripts/build_datasets.py` à partir de **`r3_unified_dataset.csv`** (268 lignes TA + MCA, toutes avec chaleur R3 à 7 j ; les 17 lignes MTA et les 125 lignes Bahhou 2026 ont été supprimées du dépôt).
 
 ```
 python3 scripts/build_datasets.py research/clay-activation-r3/r3_unified_dataset.csv research/clay-activation-r3/processed
@@ -14,7 +14,7 @@ python3 scripts/consistency.py research/clay-activation-r3/processed
 
 | Fichier | Lignes | Argiles distinctes (`parent_clay_id`) |
 |---|---|---|
-| `calcination_dataset.csv` | 243 | 178 |
+| `calcination_dataset.csv` | 118 | 84 |
 | `mechanical_dataset.csv` | 147 | 30 |
 | `dropped_rows.csv` | 3 | lignes retirées, avec la raison |
 
@@ -24,7 +24,7 @@ Lignes retirées : 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exac
 
 ## Colonnes
 
-**Communes** : `sample_id`, `parent_clay_id` (clé de CV groupée : même publication + même composition brute), `reference` (filtre / CV par source ; détails de la source : joindre `r3_unified_dataset.csv` sur `sample_id`), `is_secondary_compilation` (Bahhou 2026, 125 lignes), minéralogie brute (`*_pct`), oxydes, `post_d50_um`.
+**Communes** : `sample_id`, `parent_clay_id` (clé de CV groupée : même publication + même composition brute), `reference` (filtre / CV par source ; détails de la source : joindre `r3_unified_dataset.csv` sur `sample_id`), minéralogie brute (`*_pct`), oxydes, `post_d50_um`.
 
 **Calcination** : `calcination_temp_c`, `dwell_min`, `furnace_type` (flash, rotary_kiln, muffle, bogie_hearth, lab_furnace), `cooling` (oxidizing / reducing, Martirena).
 
@@ -37,7 +37,7 @@ Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, `furna
 - `protocol_documented` : protocole R3 noté dans la source.
 
 ## Points d'attention
-- Bahhou 2026 : compilation secondaire sans source primaire par ligne ; 5 valeurs > 1000 J/g (dont 1200) ; 2 paires contradictoires à conditions égales. Tester avec et sans.
+- Bahhou 2026 (S22, 125 lignes) supprimé : compilation secondaire sans source primaire par ligne, valeurs > 1000 J/g et paires contradictoires ; en CV groupée, l'ajouter augmentait la RMSE sur les autres sources de 161 à 188 J/g.
 - Marsh 2026 : pas de composition brute dans la source (K = kaolin, Mt = montmorillonite) ; les 52 autres valeurs originales sont sur Zenodo (10.5281/zenodo.17771208), non extraites.
 - `milling_energy_kwh_per_kg` : seulement Marsh 2026 ; ailleurs utiliser `mill_rpm`, `milling_time_min`, `ball_to_powder_ratio`.
 - Sources citées dans `sources.json` mais sans aucune donnée dans le dépôt : S04 (UR2, 47 échantillons avec R3, XRF, QXRD), S05 (Maier, 13 argiles), S08/S18 (palygorskites), S11, S12.
