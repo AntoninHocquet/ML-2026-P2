@@ -15,7 +15,7 @@ if len(t) > 5:
 m = a[a.process_family == "mechanical"].dropna(subset=["milling_energy_kwh_per_kg"])
 if len(m) > 5:
     print(f"[4] mechanical: corr(energy, heat) = {np.corrcoef(m.milling_energy_kwh_per_kg, m[y])[0,1]:.2f} (n={len(m)})")
-key = ["parent_clay_id", "process_family", "calcination_temp_c", "dwell_min", "furnace_type", "cooling",
+key = ["parent_clay_id", "process_family", "calcination_temp_c", "dwell_min", "furnace_type",
        "milling_time_min", "mill_rpm", "ball_to_powder_ratio", "grinding_aid_tea_wt_pct",
        "co_milled_glass_pct", "co_milled_na2sio3_pct"]
 d = a[a.duplicated(key, keep=False)]

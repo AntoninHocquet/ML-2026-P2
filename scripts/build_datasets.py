@@ -67,6 +67,8 @@ d["r3_quality"] = d.r3_data_quality_raw.map(quality)
 d["r3_unit_converted"] = TXT.str.contains("j/g solids") | d.r3_data_quality_raw.astype(str).str.contains("converted")
 d["protocol_documented"] = d.r3_protocol.notna()
 d["process_family"] = d.activation_type.map({"TA": "thermal", "MCA": "mechanical"})
+drop((d.process_family == "thermal") & d.calcination_temp_c.isna(),
+     "calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)")
 
 # ------------------------------------------------------------------ 3. variables extraites des notes / IDs
 def first_num(pattern, s):
@@ -124,8 +126,6 @@ def pct(pat, sid):
     return float(m.group(1).replace("_", ".")) if m else 0.0
 d["co_milled_glass_pct"] = [pct(r"_(\d+(?:_\d)?)WGP", sid) if f == "mechanical" else np.nan for sid, f in zip(SID, d.process_family)]
 d["co_milled_na2sio3_pct"] = [pct(r"_(\d+(?:_\d)?)Na2SiO3", sid) if f == "mechanical" else np.nan for sid, f in zip(SID, d.process_family)]
-d["cooling"] = np.where(SID.str.endswith("_CC"), "reducing",
-                        np.where(SID.str.startswith("Martirena") & SID.str.endswith("_NC"), "oxidizing", None))
 
 # ------------------------------------------------------------------ 4. parent_clay_id
 COMP = ["sio2_pct", "al2o3_pct", "fe2o3_pct", "kaolinite_pct", "smectite_pct", "illite_mica_pct"]
@@ -153,7 +153,7 @@ CLAY = ["kaolinite_pct", "smectite_pct", "illite_mica_pct", "mixed_is_pct", "chl
         "calcite_pct", "dolomite_pct", "feldspar_pct", "other_minerals_pct", "raw_amorphous_pct",
         "total_clay_pct", "sio2_pct", "al2o3_pct", "fe2o3_pct", "cao_pct", "mgo_pct", "k2o_pct",
         "na2o_pct", "tio2_pct", "loi_pct", "composition_method"]
-THERMAL = ["calcination_temp_c", "dwell_min", "furnace_type", "cooling"]
+THERMAL = ["calcination_temp_c", "dwell_min", "furnace_type"]
 MECH = ["milling_time_min", "mill_rpm", "ball_to_powder_ratio", "mill_type", "grinding_aid_tea_wt_pct",
         "co_milled_glass_pct", "co_milled_na2sio3_pct", "milling_energy_kwh_per_kg"]
 POST = ["post_d50_um"]

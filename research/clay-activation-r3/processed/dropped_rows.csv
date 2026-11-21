@@ -1,4 +1,10 @@
 sample_id,reference,r3_heat_7d_j_per_g,reason
 Vallina24_SWy-3_T800,Vallina et al. (2024),480.0,doublon de Koufany25_Ref1-SCC / Ref2-SCC (valeur exacte conservée)
 Vallina24_SAu-1_T750,Vallina et al. (2024),452.0,doublon de Koufany25_Ref1-SCC / Ref2-SCC (valeur exacte conservée)
+Martirena26_A1_NC,Martirena-Hernandez & Duverger (2026),475.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
+Martirena26_A1_CC,Martirena-Hernandez & Duverger (2026),210.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
+Martirena26_C2_NC,Martirena-Hernandez & Duverger (2026),690.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
+Martirena26_C2_CC,Martirena-Hernandez & Duverger (2026),130.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
+Martirena26_C3_NC,Martirena-Hernandez & Duverger (2026),520.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
+Martirena26_C3_CC,Martirena-Hernandez & Duverger (2026),390.0,"calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)"
 Plusquellec23_IC_M300_60_TEA1p0,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",288.0,"doublon exact interne (même argile, mêmes conditions, même valeur)"
