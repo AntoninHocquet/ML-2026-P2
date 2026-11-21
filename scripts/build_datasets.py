@@ -69,6 +69,7 @@ d["protocol_documented"] = d.r3_protocol.notna()
 d["process_family"] = d.activation_type.map({"TA": "thermal", "MCA": "mechanical"})
 drop((d.process_family == "thermal") & d.calcination_temp_c.isna(),
      "calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)")
+drop(SID == "Panzer24_PP", "calcination flash (quelques secondes) : température non comparable à un palier en four")
 
 # ------------------------------------------------------------------ 3. variables extraites des notes / IDs
 def first_num(pattern, s):
@@ -112,14 +113,6 @@ def mill_type(t):
     return np.nan
 d["mill_type"] = [mill_type(t) if f == "mechanical" else np.nan for t, f in zip(TXT, d.process_family)]
 
-def furnace(t):
-    for pat, lab in [(r"flash", "flash"), (r"rotary kiln|rotary-kiln", "rotary_kiln"),
-                     (r"bogie hearth", "bogie_hearth"), (r"muffle", "muffle"),
-                     (r"chamber furnace|laboratory furnace|lab furnace|electric furnace", "lab_furnace")]:
-        if re.search(pat, t):
-            return lab
-    return np.nan
-d["furnace_type"] = [furnace(t) if f == "thermal" else np.nan for t, f in zip(TXT, d.process_family)]
 # co-broyage avec un additif (Callender : verre recyclé WGP, silicate de sodium), en % massique
 def pct(pat, sid):
     m = re.search(pat, sid)
@@ -153,7 +146,7 @@ CLAY = ["kaolinite_pct", "smectite_pct", "illite_mica_pct", "mixed_is_pct", "chl
         "calcite_pct", "dolomite_pct", "feldspar_pct", "other_minerals_pct", "raw_amorphous_pct",
         "total_clay_pct", "sio2_pct", "al2o3_pct", "fe2o3_pct", "cao_pct", "mgo_pct", "k2o_pct",
         "na2o_pct", "tio2_pct", "loi_pct", "composition_method"]
-THERMAL = ["calcination_temp_c", "dwell_min", "furnace_type"]
+THERMAL = ["calcination_temp_c", "dwell_min"]
 MECH = ["milling_time_min", "mill_rpm", "ball_to_powder_ratio", "mill_type", "grinding_aid_tea_wt_pct",
         "co_milled_glass_pct", "co_milled_na2sio3_pct", "milling_energy_kwh_per_kg"]
 POST = ["post_d50_um"]

@@ -14,22 +14,22 @@ python3 scripts/consistency.py research/clay-activation-r3/processed
 
 | Fichier | Lignes | Argiles distinctes (`parent_clay_id`) |
 |---|---|---|
-| `calcination_dataset.csv` | 112 | 81 |
+| `calcination_dataset.csv` | 111 | 80 |
 | `mechanical_dataset.csv` | 147 | 30 |
-| `dropped_rows.csv` | 9 | lignes retirées, avec la raison |
+| `dropped_rows.csv` | 10 | lignes retirées, avec la raison |
 
 22 argiles (`parent_clay_id`) sont présentes dans les deux tables. Pour un jeu commun : `pd.concat` des deux fichiers.
 
-Lignes retirées : 6 Martirena 2026 (température de calcination non rapportée ; refroidissement oxydant vs réducteur), 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exact interne Plusquellec (IC_M300_60_TEA1p0).
+Lignes retirées : 1 Panzer PP (calcination flash), 6 Martirena 2026 (température de calcination non rapportée ; refroidissement oxydant vs réducteur), 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exact interne Plusquellec (IC_M300_60_TEA1p0).
 
 ## Colonnes
 
 **Communes** : `sample_id`, `parent_clay_id` (clé de CV groupée : même publication + même composition brute), `reference` (filtre / CV par source ; détails de la source : joindre `r3_unified_dataset.csv` sur `sample_id`), minéralogie brute (`*_pct`), oxydes, `post_d50_um`.
 
-**Calcination** : `calcination_temp_c`, `dwell_min`, `furnace_type` (flash, rotary_kiln, muffle, bogie_hearth, lab_furnace).
+**Calcination** : `calcination_temp_c`, `dwell_min`. Calcination avec palier uniquement (fours de laboratoire statiques, four rotatif pilote) : pas de calcination flash.
 
 **Broyage** : `milling_time_min` (147/147), `mill_rpm` (142), `ball_to_powder_ratio` (132), `mill_type` (121), `grinding_aid_tea_wt_pct` (14), `co_milled_glass_pct` / `co_milled_na2sio3_pct` (Callender : additifs co-broyés), `milling_energy_kwh_per_kg` (34, Marsh 2026).
-Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, `furnace_type`, TEA, additifs) viennent des codes d'échantillon (prioritaires) puis des notes de chaque ligne.
+Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, TEA, additifs) viennent des codes d'échantillon (prioritaires) puis des notes de chaque ligne.
 
 **Cible** : `r3_heat_7d_j_per_g` (J/g de SCM, 7 j, 40 °C).
 - `r3_quality` : exact_numeric / figure_read / derived.
