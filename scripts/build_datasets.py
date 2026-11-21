@@ -118,18 +118,7 @@ def furnace(t):
         if re.search(pat, t):
             return lab
     return np.nan
-def scale(t):
-    if re.search(r"industrial", t): return "industrial"
-    if re.search(r"pilot", t): return "pilot"
-    if re.search(r"laborator|\blab\b|muffle", t): return "laboratory"
-    return np.nan
 d["furnace_type"] = [furnace(t) if f == "thermal" else np.nan for t, f in zip(TXT, d.process_family)]
-d["scale"] = [scale(t) for t in TXT]
-# échelle explicite dans l'ID (Müller : Lab / Pilot)
-d.loc[SID.str.contains("_Pilot"), "scale"] = "pilot"
-d.loc[SID.str.contains("_Lab"), "scale"] = "laboratory"
-leeds = SID.str.startswith("Leeds23_")  # Dhandapani : notes communes aux essais labo et four industriel
-d.loc[leeds, "scale"] = np.where(SID[leeds].str.contains("industrial"), "industrial", "laboratory")
 # co-broyage avec un additif (Callender : verre recyclé WGP, silicate de sodium), en % massique
 def pct(pat, sid):
     m = re.search(pat, sid)
@@ -158,8 +147,9 @@ dup = d.duplicated(key, keep="first") & d[COMP].notna().any(axis=1)
 drop(dup, "doublon exact interne (même argile, mêmes conditions, même valeur)")
 
 # ------------------------------------------------------------------ 5. sortie
-ID = ["sample_id", "original_sample_id", "parent_clay_id", "reference", "reference_url", "source_locator",
-      "process_family", "scale", "is_secondary_compilation"]
+# sample_id : clé (jointure avec r3_unified_dataset pour la traçabilité) ; parent_clay_id : groupes de CV ;
+# reference : filtre / CV par source ; is_secondary_compilation : avec / sans Bahhou
+ID = ["sample_id", "parent_clay_id", "reference", "is_secondary_compilation"]
 CLAY = ["kaolinite_pct", "smectite_pct", "illite_mica_pct", "mixed_is_pct", "chlorite_pct", "quartz_pct",
         "calcite_pct", "dolomite_pct", "feldspar_pct", "other_minerals_pct", "raw_amorphous_pct",
         "total_clay_pct", "sio2_pct", "al2o3_pct", "fe2o3_pct", "cao_pct", "mgo_pct", "k2o_pct",
@@ -171,7 +161,7 @@ POST = ["post_d50_um"]
 TARGET = ["r3_heat_7d_j_per_g", "r3_quality", "r3_unit_converted", "protocol_documented",
           "r3_data_quality_raw", "r3_protocol", "notes"]
 
-allx = d[ID + CLAY + THERMAL + MECH + POST + TARGET].reset_index(drop=True)
+allx = d[ID + ["process_family"] + CLAY + THERMAL + MECH + POST + TARGET].reset_index(drop=True)
 th = allx[allx.process_family == "thermal"][ID + CLAY + THERMAL + POST + TARGET]
 me = allx[allx.process_family == "mechanical"][ID + CLAY + MECH + POST + TARGET]
 th.to_csv(f"{out}/calcination_dataset.csv", index=False)
@@ -187,6 +177,6 @@ for name, df in [("thermal", th), ("mechanical", me)]:
     print(f"\n== {name}: rows {len(df)}, parent clays {df.parent_clay_id.nunique()}")
     print(" quality:", df.r3_quality.value_counts().to_dict())
     cols = THERMAL if name == "thermal" else MECH
-    print(" filled:", {c: int(df[c].notna().sum()) for c in cols + ["scale", "post_d50_um"]})
+    print(" filled:", {c: int(df[c].notna().sum()) for c in cols + ["post_d50_um"]})
 pt = set(th.parent_clay_id); pm = set(me.parent_clay_id)
 print("\nclays with both thermal and mechanical:", len(pt & pm))

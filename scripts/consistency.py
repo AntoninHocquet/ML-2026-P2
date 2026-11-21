@@ -2,8 +2,8 @@
 Usage: python3 consistency.py <processed_dir>"""
 import sys, numpy as np, pandas as pd
 
-a = pd.concat([pd.read_csv(f"{sys.argv[1]}/{f}", low_memory=False)
-               for f in ("calcination_dataset.csv", "mechanical_dataset.csv")], ignore_index=True)
+a = pd.concat([pd.read_csv(f"{sys.argv[1]}/{f}_dataset.csv", low_memory=False).assign(process_family=fam)
+               for f, fam in (("calcination", "thermal"), ("mechanical", "mechanical"))], ignore_index=True)
 y = "r3_heat_7d_j_per_g"
 print("rows:", len(a))
 print("\n[1] ranges by family"); print(a.groupby("process_family")[y].describe().round(0).to_string())
@@ -16,7 +16,7 @@ m = a[a.process_family == "mechanical"].dropna(subset=["milling_energy_kwh_per_k
 if len(m) > 5:
     print(f"[4] mechanical: corr(energy, heat) = {np.corrcoef(m.milling_energy_kwh_per_kg, m[y])[0,1]:.2f} (n={len(m)})")
 key = ["parent_clay_id", "process_family", "calcination_temp_c", "dwell_min", "furnace_type", "cooling",
-       "scale", "milling_time_min", "mill_rpm", "ball_to_powder_ratio", "grinding_aid_tea_wt_pct",
+       "milling_time_min", "mill_rpm", "ball_to_powder_ratio", "grinding_aid_tea_wt_pct",
        "co_milled_glass_pct", "co_milled_na2sio3_pct"]
 d = a[a.duplicated(key, keep=False)]
 print(f"\n[5] same clay + same recorded conditions, several rows: {len(d)}")

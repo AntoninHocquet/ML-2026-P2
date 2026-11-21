@@ -24,12 +24,12 @@ Lignes retirées : 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exac
 
 ## Colonnes
 
-**Communes** : `sample_id`, `parent_clay_id` (clé de CV groupée : même publication + même composition brute), `reference`, `process_family`, `scale` (laboratory / pilot / industrial), `is_secondary_compilation` (Bahhou 2026, 125 lignes), minéralogie brute (`*_pct`), oxydes, `post_d50_um`.
+**Communes** : `sample_id`, `parent_clay_id` (clé de CV groupée : même publication + même composition brute), `reference` (filtre / CV par source ; détails de la source : joindre `r3_unified_dataset.csv` sur `sample_id`), `is_secondary_compilation` (Bahhou 2026, 125 lignes), minéralogie brute (`*_pct`), oxydes, `post_d50_um`.
 
 **Calcination** : `calcination_temp_c`, `dwell_min`, `furnace_type` (flash, rotary_kiln, muffle, bogie_hearth, lab_furnace), `cooling` (oxidizing / reducing, Martirena).
 
 **Broyage** : `milling_time_min` (147/147), `mill_rpm` (142), `ball_to_powder_ratio` (132), `mill_type` (121), `grinding_aid_tea_wt_pct` (14), `co_milled_glass_pct` / `co_milled_na2sio3_pct` (Callender : additifs co-broyés), `milling_energy_kwh_per_kg` (34, Marsh 2026).
-Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, `furnace_type`, `scale`, `cooling`, TEA, additifs) viennent des codes d'échantillon (prioritaires) puis des notes de chaque ligne.
+Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, `furnace_type`, `cooling`, TEA, additifs) viennent des codes d'échantillon (prioritaires) puis des notes de chaque ligne.
 
 **Cible** : `r3_heat_7d_j_per_g` (J/g de SCM, 7 j, 40 °C).
 - `r3_quality` : exact_numeric / figure_read / derived.
