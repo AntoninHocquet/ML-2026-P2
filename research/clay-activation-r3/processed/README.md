@@ -1,6 +1,6 @@
 # Datasets R3 : calcination vs broyage
 
-Générés par `scripts/build_datasets.py` à partir de **`r3_unified_dataset.csv`** (410 lignes, toutes avec chaleur R3 à 7 j).
+Générés par `scripts/build_datasets.py` à partir de **`r3_unified_dataset.csv`** (393 lignes TA + MCA, toutes avec chaleur R3 à 7 j ; les 17 lignes MTA ont été supprimées du dépôt).
 
 ```
 python3 scripts/build_datasets.py research/clay-activation-r3/r3_unified_dataset.csv research/clay-activation-r3/processed
@@ -17,9 +17,9 @@ python3 scripts/consistency.py research/clay-activation-r3/processed/all_data_co
 | `calcination_dataset.csv` | 243 | 178 |
 | `mechanical_dataset.csv` | 147 | 30 |
 | `all_data_combined.csv` | 390 | 22 argiles présentes dans les deux tables |
-| `dropped_rows.csv` | 20 | lignes retirées, avec la raison |
+| `dropped_rows.csv` | 3 | lignes retirées, avec la raison |
 
-Lignes retirées : 17 MTA (broyage puis calcination, 3-4 argiles : trop peu pour un modèle), 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exact interne Bahhou.
+Lignes retirées : 2 Vallina 2024 (= Koufany 2025 Ref1/Ref2-SCC), 1 doublon exact interne Bahhou.
 
 ## Colonnes
 

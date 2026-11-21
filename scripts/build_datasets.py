@@ -1,6 +1,6 @@
 """Construit les datasets calcination / broyage à partir de r3_unified_dataset.csv.
 
-r3_unified_dataset.csv remplace à la fois l'Excel TA_MCA_MTA et les lignes "heat"
+r3_unified_dataset.csv (TA + MCA ; MTA supprimé du dépôt) remplace à la fois l'Excel TA_MCA_MTA et les lignes "heat"
 de r3_measurements.csv (S02 Table 19, S03 Table 6, S07, S09, S10 y sont, avec
 température et minéralogie en plus). r3_measurements.csv et
 r3_auxiliary_measurements.csv ne gardent que la chaleur 7 j : redondants, non lus.
@@ -53,7 +53,6 @@ def drop(mask, reason):
     keep = ~mask
     d, TXT, SID = d[keep].copy(), TXT[keep], SID[keep]
 
-drop(d.activation_type == "MTA", "MTA (broyage + calcination) : trop peu de données pour un modèle")
 # Vallina 2024 (S07) = mêmes échantillons que Koufany 2025 Ref1/Ref2 (même groupe, mêmes T, valeurs exactes chez Koufany)
 drop(SID.isin(["Vallina24_SAu-1_T750", "Vallina24_SWy-3_T800"]),
      "doublon de Koufany25_Ref1-SCC / Ref2-SCC (valeur exacte conservée)")
