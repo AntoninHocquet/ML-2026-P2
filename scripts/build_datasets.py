@@ -174,7 +174,6 @@ TARGET = ["r3_heat_7d_j_per_g", "r3_quality", "r3_unit_converted", "protocol_doc
 allx = d[ID + CLAY + THERMAL + MECH + POST + TARGET].reset_index(drop=True)
 th = allx[allx.process_family == "thermal"][ID + CLAY + THERMAL + POST + TARGET]
 me = allx[allx.process_family == "mechanical"][ID + CLAY + MECH + POST + TARGET]
-allx.to_csv(f"{out}/all_data_combined.csv", index=False)
 th.to_csv(f"{out}/calcination_dataset.csv", index=False)
 me.to_csv(f"{out}/mechanical_dataset.csv", index=False)
 pd.DataFrame(log).to_csv(f"{out}/dropped_rows.csv", index=False)

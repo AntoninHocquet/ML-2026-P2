@@ -1,8 +1,9 @@
-"""Contrôles de cohérence sur processed/all_data_combined.csv.
-Usage: python3 consistency.py <all_data_combined.csv>"""
+"""Contrôles de cohérence sur calcination_dataset.csv + mechanical_dataset.csv.
+Usage: python3 consistency.py <processed_dir>"""
 import sys, numpy as np, pandas as pd
 
-a = pd.read_csv(sys.argv[1], low_memory=False)
+a = pd.concat([pd.read_csv(f"{sys.argv[1]}/{f}", low_memory=False)
+               for f in ("calcination_dataset.csv", "mechanical_dataset.csv")], ignore_index=True)
 y = "r3_heat_7d_j_per_g"
 print("rows:", len(a))
 print("\n[1] ranges by family"); print(a.groupby("process_family")[y].describe().round(0).to_string())
