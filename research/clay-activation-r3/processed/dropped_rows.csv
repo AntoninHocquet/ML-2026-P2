@@ -1,0 +1,21 @@
+sample_id,reference,r3_heat_7d_j_per_g,reason
+Alvarez25_K-A-300,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,728.9,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-A-400,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,781.2,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-A-500,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,808.7,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-A-600,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,877.4,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-A-800,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,891.2,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-B-300,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,566.9,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-B-400,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,591.8,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-B-500,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,750.4,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-B-600,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,828.3,MTA (broyage + calcination) : trop peu de données pour un modèle
+Alvarez25_K-B-800,Alvarez-Coscojuela et al. (2025) / Zhao et al. (2025) if noted,877.8,MTA (broyage + calcination) : trop peu de données pour un modèle
+Plusquellec23_IC_M500_20_T600,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",421.0,MTA (broyage + calcination) : trop peu de données pour un modèle
+Plusquellec23_IC_M500_20_T800,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",406.0,MTA (broyage + calcination) : trop peu de données pour un modèle
+Xu26_CG58_DM10-TA550,"Xu, Marsh, Dhar & Scrivener (2026)",698.1,MTA (broyage + calcination) : trop peu de données pour un modèle
+Xu26_CG58_DM30-TA550,"Xu, Marsh, Dhar & Scrivener (2026)",732.3,MTA (broyage + calcination) : trop peu de données pour un modèle
+Xu26_CG58_DM45-TA550,"Xu, Marsh, Dhar & Scrivener (2026)",771.2,MTA (broyage + calcination) : trop peu de données pour un modèle
+Panzer24_GFU,Panzer et al. (2024),463.0,MTA (broyage + calcination) : trop peu de données pour un modèle
+Panzer24_GUS,Panzer et al. (2024),315.0,MTA (broyage + calcination) : trop peu de données pour un modèle
+Vallina24_SWy-3_T800,Vallina et al. (2024),480.0,doublon de Koufany25_Ref1-SCC / Ref2-SCC (valeur exacte conservée)
+Vallina24_SAu-1_T750,Vallina et al. (2024),452.0,doublon de Koufany25_Ref1-SCC / Ref2-SCC (valeur exacte conservée)
+Plusquellec23_IC_M300_60_TEA1p0,"Plusquellec et al. (2023), 16th ICCC, Bangkok, conference paper D0011",288.0,"doublon exact interne (même argile, mêmes conditions, même valeur)"
