@@ -33,8 +33,6 @@ Les variables extraites (`mill_rpm`, `ball_to_powder_ratio`, `mill_type`, TEA, a
 
 **Cible** : `r3_heat_7d_j_per_g` (J/g de SCM, 7 j, 40 °C).
 - `r3_quality` : exact_numeric / figure_read / derived.
-- `r3_unit_converted` : vrai si convertie depuis J/g de solides (Zunino 2024, facteur 4,5 donné par les auteurs).
-- `protocol_documented` : protocole R3 noté dans la source.
 
 ## Points d'attention
 - Bahhou 2026 (S22, 125 lignes) supprimé : compilation secondaire sans source primaire par ligne, valeurs > 1000 J/g et paires contradictoires ; en CV groupée, l'ajouter augmentait la RMSE sur les autres sources de 161 à 188 J/g.

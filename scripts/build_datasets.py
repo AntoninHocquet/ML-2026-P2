@@ -57,15 +57,16 @@ drop(SID.isin(["Vallina24_SAu-1_T750", "Vallina24_SWy-3_T800"]),
 
 # ------------------------------------------------------------------ 2. qualité R3
 def quality(q):
-    q = str(q).lower()
-    if "deriv" in q or "estimat" in q or "convert" in q:
+    # seul le premier segment (avant ";" ou "|") parle de la valeur R3 ; la suite peut parler
+    # d'autres grandeurs (ex. Müller : "28d strength visually estimated"). Une conversion d'unité
+    # exacte (Zunino, J/g solides x 4,5) reste exact_numeric.
+    q = re.split(r"[;|]", str(q).lower())[0]
+    if "deriv" in q or "estimat" in q:
         return "derived"
     if "approx" in q or "visual" in q or "read-off" in q or "figure-read" in q or "digitiz" in q:
         return "figure_read"
     return "exact_numeric"
 d["r3_quality"] = d.r3_data_quality_raw.map(quality)
-d["r3_unit_converted"] = TXT.str.contains("j/g solids") | d.r3_data_quality_raw.astype(str).str.contains("converted")
-d["protocol_documented"] = d.r3_protocol.notna()
 d["process_family"] = d.activation_type.map({"TA": "thermal", "MCA": "mechanical"})
 drop((d.process_family == "thermal") & d.calcination_temp_c.isna(),
      "calcination sans température (Martirena 2026 : refroidissement oxydant / réducteur, T non rapportée)")
@@ -150,8 +151,7 @@ THERMAL = ["calcination_temp_c", "dwell_min"]
 MECH = ["milling_time_min", "mill_rpm", "ball_to_powder_ratio", "mill_type", "grinding_aid_tea_wt_pct",
         "co_milled_glass_pct", "co_milled_na2sio3_pct", "milling_energy_kwh_per_kg"]
 POST = ["post_d50_um"]
-TARGET = ["r3_heat_7d_j_per_g", "r3_quality", "r3_unit_converted", "protocol_documented",
-          "r3_data_quality_raw", "r3_protocol", "notes"]
+TARGET = ["r3_heat_7d_j_per_g", "r3_quality", "notes"]
 
 allx = d[ID + ["process_family"] + CLAY + THERMAL + MECH + POST + TARGET].reset_index(drop=True)
 th = allx[allx.process_family == "thermal"][ID + CLAY + THERMAL + POST + TARGET]
