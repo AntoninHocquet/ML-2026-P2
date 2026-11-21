@@ -11,8 +11,8 @@ Le jeu de données unifié combine les données initiales du dépôt GitHub et l
 | Jeu de données | Fichier | Observations | Métrique principale | Activation couverte |
 | :--- | :--- | :---: | :--- | :--- |
 | **Jeu Unifié Principal (Machine Learning)** | [`research/clay-activation-r3/r3_unified_dataset.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_unified_dataset.csv) | **410** | **Chaleur R³ à 7 jours** ($J/g$ d'argile activée) | **TA** (245), **MCA** (148), **MTA** (17) |
-| **Mesures Auxiliaires & Cinétiques** | [`research/clay-activation-r3/r3_auxiliary_measurements.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_auxiliary_measurements.csv) | **116** | Eau liée ($g/100g$), chaleur 24h & 14j | Muffle, rotary-kiln soak, flash |
-| **Mesures Historiques Initiales** | [`research/clay-activation-r3/r3_measurements.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_measurements.csv) | **135** | Format transactionnel (chaleur + eau liée) | S02, S03, S06, S07, S09, S10 |
+| **Mesures Auxiliaires & Cinétiques** | [`research/clay-activation-r3/r3_auxiliary_measurements.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_auxiliary_measurements.csv) | **9** | Chaleur R³ 7 j (S02 Table 19) | Muffle |
+| **Mesures Historiques Initiales** | [`research/clay-activation-r3/r3_measurements.csv`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/r3_measurements.csv) | **28** | Format transactionnel (chaleur R³ 7 j uniquement) | S02, S03, S07, S09, S10 |
 | **Registre des Sources Bibliographiques** | [`research/clay-activation-r3/sources.json`](file:///c:/MAIN/Code/GitHub/ML-2026-P2/research/clay-activation-r3/sources.json) | **36 études** | Métadonnées, DOI, conditions | S01 à S36 |
 
 ---

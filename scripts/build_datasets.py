@@ -2,8 +2,8 @@
 
 r3_unified_dataset.csv remplace à la fois l'Excel TA_MCA_MTA et les lignes "heat"
 de r3_measurements.csv (S02 Table 19, S03 Table 6, S07, S09, S10 y sont, avec
-température et minéralogie en plus). Les autres fichiers ne contiennent que de
-l'eau liée ou des âges != 7 j (r3_auxiliary_measurements.csv) : exclus.
+température et minéralogie en plus). r3_measurements.csv et
+r3_auxiliary_measurements.csv ne gardent que la chaleur 7 j : redondants, non lus.
 
 Usage: python3 build_datasets.py <r3_unified_dataset.csv> <out_dir>
 """
